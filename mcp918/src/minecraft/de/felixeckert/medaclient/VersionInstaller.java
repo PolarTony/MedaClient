@@ -14,13 +14,13 @@ public class VersionInstaller {
 		File mcDir = new File(Minecraft.getMinecraft().mcDataDir.getAbsolutePath().substring(
 				0, Minecraft.getMinecraft().mcDataDir.getAbsolutePath().length()-2));
 		File versionDir = new File(mcDir + "/versions");
-		File medaVersionDir = new File(versionDir+"/MedaClient"+FileLoader.loadFile(mcDir+"/medaUpdates/olVersion.txt").replace('.', '0'));
+		File medaVersionDir = new File(versionDir+"/Magma Client"+FileLoader.loadFile(mcDir+"/medaUpdates/olVersion.txt").replace('.', '0'));
 		File updateDir = new File(mcDir, "medaUpdates");
 		
 		if (!medaVersionDir.isDirectory()) {
 			try {
 				System.out.println(medaVersionDir.mkdir());
-				Files.copy(new File(updateDir.getAbsolutePath()+"/MedaClient.jar").toPath(), new File(medaVersionDir.getAbsolutePath(),"MedaClient.jar").toPath());
+				Files.copy(new File(updateDir.getAbsolutePath()+"/Magma Client.jar").toPath(), new File(medaVersionDir.getAbsolutePath(),"Magma Client.jar").toPath());
 			} catch (IOException e) {
 				ExceptionHandler.getHandler().reportException(e, "An error occured whilst Updating MedaClient: IOException");
 			}
